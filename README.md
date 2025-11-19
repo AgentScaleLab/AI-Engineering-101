@@ -15,3 +15,8 @@ A short hands-on development resource for LLM agents
 ## Agent Infra
 
 ## Best Practices
+
+## Multi-modal Agents
+- UI Assistants
+- Video Understanding
+- Music/Video Editing and Generation
