@@ -9,6 +9,7 @@ A short hands-on development resource for LLM agents
 - [Blog] [How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system).
 - [Tutorial] [Advanced RAG Techniques: Elevating Your Retrieval-Augmented Generation Systems](https://github.com/NirDiamant/rag_techniques).
 - [Tutorial] [GenAI Agents: Comprehensive Repository for Development and Implementation](https://github.com/NirDiamant/genai_agents).
+- [Tutorial] [Google Research 76-Page Whitepaper on AI Agents](https://www.marktechpost.com/2025/05/06/google-releases-76-page-whitepaper-on-ai-agents-a-deep-technical-dive-into-agentic-rag-evaluation-frameworks-and-real-world-architectures/).
 
 ## Frameworks
 - [Codebase] [CrewAI: Fast and Flexible Multi-Agent Automation Framework](https://github.com/crewAIInc/crewAI).
