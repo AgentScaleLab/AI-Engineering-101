@@ -37,6 +37,10 @@ _Research advances on agent infra and multimodal infra_
 #### GPU Kernels
 1. [Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](https://arxiv.org/abs/2510.08431). arXiv 2025. 
    - FlashAttention-2 JVP kernel for training
+2. [SageAttention: Accurate 8-Bit Attention for Plug-and-play Inference Acceleration](https://arxiv.org/abs/2410.02367). ICLR 2025.
+   - 8-bit attention kernel for inference
+3. [SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse-Linear Attention](https://arxiv.org/abs/2509.24006). arXiv 2025.
+   - Sparse attention kernel for inference
 
 ## Engineering
 _Engineering best practices for building AI systems_
