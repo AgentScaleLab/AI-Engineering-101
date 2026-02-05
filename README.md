@@ -1,29 +1,33 @@
-# Awesome-LLM-Agents
-A short hands-on development resource for LLM agents
+# AI Engineering 101
+All you need to know to get started with AI Engineering. In this repository, I'm documenting my learning notes of AI Engineering.
 
-## Concepts
-- [Blog] [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/). 
+## Research
+_Research advances on agent infra and multimodal infra_
 
-## Tutorials
-- [Blog] [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents).
-- [Blog] [How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system).
-- [Tutorial] [Advanced RAG Techniques: Elevating Your Retrieval-Augmented Generation Systems](https://github.com/NirDiamant/rag_techniques).
-- [Tutorial] [GenAI Agents: Comprehensive Repository for Development and Implementation](https://github.com/NirDiamant/genai_agents).
-- [Tutorial] [Google Research 76-Page Whitepaper on AI Agents](https://www.marktechpost.com/2025/05/06/google-releases-76-page-whitepaper-on-ai-agents-a-deep-technical-dive-into-agentic-rag-evaluation-frameworks-and-real-world-architectures/).
+### Agent Infra
+> Agent infra focuses on optimizing agent runtime performance instead of building agents. For more information, check out [Why agent infrastructure matters](https://blog.langchain.com/why-agent-infrastructure/) and [Agent Engineering: A New Discipline](https://blog.langchain.com/agent-engineering-a-new-discipline/).
 
-## Frameworks
-- [Codebase] [CrewAI: Fast and Flexible Multi-Agent Automation Framework](https://github.com/crewAIInc/crewAI).
-- [Codebase] [LangGraph: Build resilient language agents as graphs](https://github.com/langchain-ai/langgraph).
+1. [Identifying the Risks of LM Agents with an LM-Emulated Sandbox](https://arxiv.org/abs/2309.15817). ICLR 2024.
 
-## Agent Infra (AgentOps)
+### Multimodal Infra
+> If you want to learn more about multimodal models, check out the [Understanding Multimodal LLMs](https://magazine.sebastianraschka.com/p/understanding-multimodal-llms?utm_source=publication-search).
 
-## Best Practices
-- [Tutorial] [Startup technical guide: AI Agents](https://services.google.com/fh/files/misc/startup_technical_guide_ai_agents_final.pdf).
-- [Tutorial] [Agents Towards Production](https://github.com/NirDiamant/agents-towards-production).
-- [ICLR 2025] [Scaling Large Language Model-based Multi-Agent Collaboration](https://openreview.net/forum?id=K3n5jPkrU6).
-- [NeurIPS 2025 Workshop] [Scaling Environments for Agents (SEA)](https://sea-workshop.github.io/).
+#### Training
+1. [DistTrain: Addressing Model and Data Heterogeneity with Disaggregated Training for Multimodal Large Language Models](https://arxiv.org/abs/2408.04275). arXiv 2024.
+2. [PipeWeaver: Addressing Data Dynamicity in Large Multimodal Model Training with Dynamic Interleaved Pipeline](https://arxiv.org/abs/2504.14145). arXiv 2025.
+#### Serving
+1. [Approximate Caching for Efficiently Serving Text-to-Image Diffusion Models](https://www.usenix.org/conference/nsdi24/presentation/agarwal-shubham). NSDI 2024.
+2. [Katz: Efficient Workflow Serving for Diffusion Models with Many Adapters](https://www.usenix.org/system/files/atc25-li-suyi-katz.pdf). ATC 2025.
+3. [Understanding Diffusion Model Serving in Production: A Top-Down Analysis of Workload, Scheduling, and Resource Efficiency](https://dl.acm.org/doi/10.1145/3772052.3772206). SoCC 2025.
 
-## Multi-modal Agents
-- UI Assistants
-- Video Understanding
-- Music/Video Editing and Generation
+## Engineering
+_Engineering best practices for building AI systems_
+
+### PyTorch Best Practices
+1. [Optimize Training Performance in PyTorch](./Engineering/PyTorch/training_optim.md) 
+   - MFU, Performance Profiling, and Optimization Techniques
+ 
+### Multimodal Best Practices
+
+1. [Disaggregated Hybrid Parallelism with Ray](https://github.com/ray-project/multimodal-training) - A framework for training vision-language models using disaggregated hybrid parallelism, where each model component adopts its optimal parallelization strategy independently.
+
