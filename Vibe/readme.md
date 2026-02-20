@@ -9,8 +9,9 @@
   - [工具的选择](#工具的选择)
   - [Claude Code初始化](#claude-code初始化)
   - [项目实践](#项目实践)
-    - [从0开始一个项目](#从0开始一个项目)
-    - [修改一个复杂项目](#修改一个复杂项目)
+    - [从0开始一个项目（算法）](#从0开始一个项目算法)
+    - [修改一个复杂项目（算法）](#修改一个复杂项目算法)
+    - [修改一个复杂项目（系统）](#修改一个复杂项目系统)
 
 ## 工具的选择
 目前市面上主流的AI Coding工具有：Claude Code，Cursor, OpenAI Codex。这里先忽略国产工具，因为使用体验上，和国外这些工具还有不少差距。当然，也有一些VSCode插件，但这里也不推荐，因为插件有很多限制，比如没有办法自行跑测试等。比较推崇的Vibe Coding方式是异步协作，终端跑AI, VSCode内工程师和AI对需求或者技术文档。基于此，我们选择Claude Code做为主要工具，配套国产免费的大模型API。免费的国产模型API这里用的是iFlow的Qwen3-Coder-Plus，你可以[参考官网](https://platform.iflow.cn/models)选择适合的模型。
@@ -46,7 +47,7 @@ ccr code # 启动Claude Code
 # 安装好Skills之后，可以尝试输入一个需求，比如：
 /everything-claude-code:plan 帮我设计一个LLM Agent微服务，核心Agent逻辑用Python写，微服务业务逻辑用golang 
 ```
-![](./skill_example.png)
+![](./imgs/skill_example.png)
 
 ## 项目实践
 实践覆盖两类基础场景，分别是“从0开始一个项目”和“修改一个复杂项目”。第一种适合于科研项目，第二种更适合实际工程项目。
@@ -61,8 +62,9 @@ uv pip install xxx # 安装依赖
 # 在激活虚拟环境后，再进入claude code，开始使用
 ccr code
 ```
-![](./uv_sample2.png)
-### 从0开始一个项目
+![](./imgs/uv_sample2.png)
+
+### 从0开始一个项目（算法）
 _设计一个训练框架，提升PyTorch-Native ResNet18训练效率_
 
 ```markdown
@@ -76,19 +78,19 @@ _设计一个训练框架，提升PyTorch-Native ResNet18训练效率_
 
 从下面的截图里看到，整体的代码编写测试并不需要程序员参与，基本只要用中文和Claude Code对齐了需求，剩下的事情Claude Code就会自动完成。_之前有很多教程里把vibe coding看成传统软件工程里的同事一样，按照标准方式和Claude Code交互（需求文档-画原型-技术文档-具体实现）但是对于已经安装Skills的Claude Code，那种古法交互应该放弃，尽可能给于Claude Code自主性，因为它已经能够很好的利用Skills自动完成上述软件开发流程。_
 
-![](./resnet18_1.png)
-![](./resnet18_2.png)
-![](./resnet18_3.png)
-![](./resnet18_4.png)
-![](./resnet18_5.png)
-![](./resnet18_6.png)
-![](./resnet18_7.png)
-![](./resnet18_8.png)
-![](./result.png)
+![](./imgs/resnet18_1.png)
+![](./imgs/resnet18_2.png)
+![](./imgs/resnet18_3.png)
+![](./imgs/resnet18_4.png)
+![](./imgs/resnet18_5.png)
+![](./imgs/resnet18_6.png)
+![](./imgs/resnet18_7.png)
+![](./imgs/resnet18_8.png)
+![](./imgs/result.png)
 
 生成的代码库在[simple_vibe](./simple_vibe/).
 
-### 修改一个复杂项目
+### 修改一个复杂项目（算法）
 _给[pytorch-image-models](https://github.com/huggingface/pytorch-image-models#)增加一个semi-supervised learning algorithm_
 
 在修改复杂项目时，第一步需要通过`/init`解析项目，生成一个精简文档，通过这个文档，我们能快速理解如何运行这个项目以及代码的核心架构有哪些。这些信息既可以帮助我们理解项目，也方便后期修改规范化。
@@ -102,23 +104,60 @@ source venv/bin/activate # 激活虚拟环境
 ccr code # 启动Claude Code
 /init # 生成精简文档 ./CLAUDE.md
 ```
-![](./init_1.png)
-![](./init.png)
+![](./imgs/init_1.png)
+![](./imgs/init.png)
 
 ```markdown
 # 提示词整理
 
 帮我在现在项目结构基础上增加半监督训练算法，尽量不修改整体结构
 ```
-![](./semi1.png)
-![](./semi2.png)
-![](./semi3.png)
-![](./semi4.png)
-![](./semi5.png)
+![](./imgs/semi1.png)
+![](./imgs/semi2.png)
+![](./imgs/semi3.png)
+![](./imgs/semi4.png)
+![](./imgs/semi5.png)
 
 更新好之后，`CLAUDE.md`里也会更新半监督训练的描述
-![](./claude_readme.png)
+![](./imgs/claude_readme.png)
 
 > 注意：复杂项目可能对上下文要求很高，所以需要通过`/context`命令及时查看上下文使用情况，如果上下文已经达到256K，需要通过`/clear`命令清理上下文。
 
-![](./context.png)
+![](./imgs/context.png)
+
+### 修改一个复杂项目（系统）
+_给Nano-vLLM添加一个prefill decode disaggregation功能_
+
+```bash
+git clone git@github.com:GeeeekExplorer/nano-vllm.git
+cd nano-vllm # 进入项目
+uv venv # 创建虚拟环境
+source venv/bin/activate # 激活虚拟环境
+
+ccr code # 启动Claude Code
+\init # 生成精简文档
+```
+![](./imgs/claude_vllm.png)
+
+> 注意：这类复杂infra项目修改，可以先让Claude Code生成一个修改计划，然后工程师手工检查下计划是否正确，如果正确，再开始修改。
+
+```markdown
+# 提示词整理
+
+在不改变项目结构的情况下，实现prefill decode disaggregation，因为prefill是compute-bound而decode是memory-bound，所以我需要实现两者解耦，并在实际部署里auto-scale这两部分，比如prefill在高FLOPs的机器上，decode在高memory bandwidth的机器上，请先写一个修改计划敲定实现细节。
+
+```
+
+![](./imgs/vllm_1.png)
+![](./imgs/vllm_2.png)
+![](./imgs/vllm_3.png)
+
+很明显，生成的修改计划里，明确实现了两个class，一个用于prefill，一个用于decode，并且描述基本符合我们的要求。
+
+再确定计划后，可以同意修改计划，让Claude Code自动修改。
+![](./imgs/vllm4.png)
+![](./imgs/vllm5.png)
+![](./imgs/vllm6.png)
+
+在任务完成后，Claude Code会自动更新`CLAUDE.md`，方便我们理解修改后的项目结构和逻辑。
+![](./imgs/vllm_readme.png)
