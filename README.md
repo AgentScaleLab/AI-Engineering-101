@@ -4,6 +4,7 @@ All you need to know to get started with AI Engineering. In this repository, I'm
 ## Table of Contents
 - [AI Engineering 101](#ai-engineering-101)
   - [Table of Contents](#table-of-contents)
+  - [Vibe Coding](#vibe-coding)
   - [Research](#research)
     - [Agent Infra](#agent-infra)
     - [Multimodal Infra](#multimodal-infra)
@@ -11,8 +12,14 @@ All you need to know to get started with AI Engineering. In this repository, I'm
       - [Serving](#serving)
       - [GPU Kernels](#gpu-kernels)
   - [Engineering](#engineering)
+    - [Kernel Best Practices](#kernel-best-practices)
     - [PyTorch Best Practices](#pytorch-best-practices)
     - [Multimodal Best Practices](#multimodal-best-practices)
+    - [Ray Best Practices](#ray-best-practices)
+
+## Vibe Coding
+[A short guide](./Vibe/readme.md) to vibe coding for engineers.
+
 
 ## Research
 _Research advances on agent infra and multimodal infra_
@@ -45,11 +52,21 @@ _Research advances on agent infra and multimodal infra_
 ## Engineering
 _Engineering best practices for building AI systems_
 
+### Kernel Best Practices
+1. [OpenAI Triton Best Practices](./Engineering/Kernel/triton_tutorial.md)
+   - A hands-on tutorial on best practices for writing efficient GPU kernels using Triton.
+
 ### PyTorch Best Practices
 1. [Optimize Training Performance in PyTorch](./Engineering/PyTorch/training_optim.md) 
-   - MFU, Performance Profiling, and Optimization Techniques
+   - Model FLOPs Utilization (MFU), PyTorch Profiler & Nsight Systems for performance monitoring, Triton and Nsight Compute for kernel optimization.
+
  
 ### Multimodal Best Practices
 
-1. [Disaggregated Hybrid Parallelism with Ray](https://github.com/ray-project/multimodal-training) - A framework for training vision-language models using disaggregated hybrid parallelism, where each model component adopts its optimal parallelization strategy independently.
+1. [Disaggregated Hybrid Parallelism with Ray](https://github.com/ray-project/multimodal-training) 
+   - A framework for training vision-language models using disaggregated hybrid parallelism, where each model component adopts its optimal parallelization strategy independently.
+
+### Ray Best Practices
+1. [Use Ray for Distributed Machine Learning Apps](./Engineering/Ray/ray_ml_apps.md)
+   - Scaling up machine learning applications using Ray.
 
