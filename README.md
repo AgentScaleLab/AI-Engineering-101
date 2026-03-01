@@ -18,7 +18,9 @@ All you need to know to get started with AI Engineering. In this repository, I'm
     - [Ray Best Practices](#ray-best-practices)
 
 ## Vibe Coding
-[A short guide](./Vibe/readme.md) to vibe coding for engineers.
+- [A short guide (Claude Code)](./Vibe/readme.md) to introduce vibe coding for non-tech guys.
+- [A short guide (OpenCode)](./Vibe/opencode.md) to introduce vibe coding for engineers.
+
 
 
 ## Research
